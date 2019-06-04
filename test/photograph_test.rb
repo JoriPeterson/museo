@@ -8,6 +8,7 @@ class PhotographTest < Minitest::Test
 
   def setup
     @photograph = Photograph.new({id: "1", name: "Rue Mouffetard, Paris (Boy with Bottles)", artist_id: 4, year: 1954})
+
   end
 
   def test_it_exists
