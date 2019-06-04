@@ -24,5 +24,21 @@ class Curator
     @photographs.find do |photograph|
       photograph.id == id
     end
-  end    
+  end
+
+  def find_photographs_by_artist(artist)
+    photos = []
+    artist_hash = Hash.new
+    @artists.each do |name, id|
+      artist_hash[artist.name] = artist.id
+    end
+      photos = @photographs.find_all do |photo|
+        if photo.artist_id == artist_hash.values
+        end
+      end
+    photos
+  end
+
+  
+
 end
