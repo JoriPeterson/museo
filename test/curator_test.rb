@@ -41,4 +41,16 @@ class CuratorTest < Minitest::Test
     assert_equal artist_1, @curator.artists.first
     assert_equal "Henri Cartier-Bresson", @curator.artists.first.name
   end
+
+  def test_it_can_find_artists_by_id
+    artist_1 = @curator.add_artist(@artist_1).last
+    artist_2 = @curator.add_artist(@artist_2).last
+    @curator.find_artist_by_id("1")
+  end
+
+  def test_it_can_find_photograph_by_id
+    photo_1 = @curator.add_photograph(@photo_1).last
+    photo_2 = @curator.add_photograph(@photo_2).last
+    @curator.find_photograph_by_id("2")
+  end
 end
